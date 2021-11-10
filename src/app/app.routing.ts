@@ -9,9 +9,14 @@ export const appRutes: Routes = [
     loadChildren: () => import('./modules/ads/ads.module').then(m => m.AdsModule),
   },
   {
-    path: 'ad/:id',
+    path: 'hirdetes/:id',
     pathMatch: 'full',
     loadChildren: () => import('./modules/ad/ad.module').then(m => m.AdModule),
+  },
+  {
+    path: 'kedvencek',
+    pathMatch: 'full',
+    loadChildren: () => import('./modules/favorites/favorites.module').then(m => m.FavoritesModule),
   },
   {
     path: '404',
