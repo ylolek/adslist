@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { AdComponent } from './ad.component';
-import { adRoutes } from './ad.routing';
+import { AdDetailComponent } from './ad-detail.component';
+import { adDetailRoutes } from './ad-detail.routing';
 
 
 
 @NgModule({
   declarations: [
-    AdComponent
+    AdDetailComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(adRoutes)
+    RouterModule.forChild(adDetailRoutes)
   ]
 })
-export class AdModule { }
+export class AdDetailModule { }

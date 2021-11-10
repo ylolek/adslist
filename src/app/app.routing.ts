@@ -11,7 +11,7 @@ export const appRutes: Routes = [
   {
     path: 'hirdetes/:id',
     pathMatch: 'full',
-    loadChildren: () => import('./modules/ad/ad.module').then(m => m.AdModule),
+    loadChildren: () => import('./modules/ad-detail/ad-detail.module').then(m => m.AdDetailModule),
   },
   {
     path: 'kedvencek',
@@ -25,6 +25,6 @@ export const appRutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/404'
+    redirectTo: '404'
   }
 ];
