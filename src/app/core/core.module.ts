@@ -1,9 +1,9 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { Error404Component } from './error-pages/error404/error404.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { Error404Component } from './components/error-pages/error404/error404.component';
 import { ApiService } from './services/api.service';
 import { AdsService } from './services/ads.service';
 import { FavoritesService } from './services/favorites.service';

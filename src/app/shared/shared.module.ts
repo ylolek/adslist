@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdBoxComponent } from './ad-box/ad-box.component';
+import { AdBoxComponent } from './components/ad-box/ad-box.component';
 
 
 

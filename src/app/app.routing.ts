@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { Error404Component } from './core/error-pages/error404/error404.component';
+import { Error404Component } from './core/components/error-pages/error404/error404.component';
 
 export const appRutes: Routes = [
   {
