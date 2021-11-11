@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-6">left</div>
         <div class="col-6">
-            <app-ad-box *ngFor="let ad of ads$ | async"></app-ad-box>
+            <app-ad-box *ngFor="let ad of ads$ | async" [data]="ad"></app-ad-box>
             <p *ngFor="let favorite of favorites$ | async">{{ favorite }}</p>
         </div>
     </div>

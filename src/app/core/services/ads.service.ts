@@ -13,7 +13,7 @@ export class AdsService {
   constructor(private readonly apiService: ApiService) {}
 
   getAds(): void {
-    this.apiService.getAdList$().pipe(
+    this.apiService.getAds$().pipe(
       catchError(err => throwError(err))
     ).subscribe(resp => {
       this.ads$.next(resp?.ads || []);

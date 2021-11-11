@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ad-detail',
   templateUrl: './ad-detail.component.html',
-  styleUrls: ['./ad-detail.component.scss']
+  styleUrls: ['./ad-detail.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdDetailComponent implements OnInit {
 

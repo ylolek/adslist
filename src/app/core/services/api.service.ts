@@ -6,14 +6,17 @@ import { Observable, of } from 'rxjs';
 export class ApiService {
   constructor() {}
 
-  getAdList$(): Observable<any> {
+  getAds$(): Observable<any> {
     const data = require('../../../assets/mock-jsons/ads.json');
     return of(data);
   }
 
   getFavorites$(): Observable<any> {
-    return of({
+    /*return of({
       favorites: localStorage.getItem('adslist_favorites') || []
+    });*/
+    return of({
+      favorites: [2101]
     });
   }
 
