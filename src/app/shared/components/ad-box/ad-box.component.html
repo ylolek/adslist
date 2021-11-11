@@ -1,1 +1,19 @@
-<p>ad-box works!</p>
+<article class="ad-box d-flex shadow">
+    <ng-container *ngIf="!!data?.image; else noImage">
+        <img [src]="data?.image" class="ad-image" alt="">
+    </ng-container>
+    <ng-template #noImage>
+        <div class="no-ad-image"></div>
+    </ng-template>
+
+    <header class="ad-header flex-grow-1">
+        <h2 class="ad-address">{{ data?.address }}</h2>
+        <span class="ad-price">{{ data?.price | number }} {{ data?.currency }}</span>
+    </header>
+    <a (click)="toggleFavorite()" class="favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
+        <i *ngIf="isFavorite; else notFavorite" class="bi bi-star-fill"></i>
+        <ng-template #notFavorite>
+            <i class="bi bi-star"></i>
+        </ng-template>
+    </a>
+</article>

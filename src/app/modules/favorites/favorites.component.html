@@ -1,1 +1,21 @@
-<p>favorites works!</p>
+<section class="favorites-list container">
+    <div class="row">
+        <div class="hidden-md col-lg-3">
+            <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-12 col-lg-9">
+            <h1 class="d-flex justify-content-between shadow-sm mb-4 px-4 py-3">
+                <span class="label">Kedvencek</span>
+                <span class="note">{{ favorites?.length || 0 }}</span>
+            </h1>
+
+            <ng-container *ngIf="!!favorites?.length; else noFavorites">
+                <app-ad-box *ngFor="let favorite of favorites" [data]="favorite"></app-ad-box>
+            </ng-container>
+
+            <ng-template #noFavorites>
+                <p>Nincsenek kedvencek</p>
+            </ng-template>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+<nav [ngClass]="{ 'open': isMenuOpen$ | async }" class="main-nav shadow me-0 me-md-4 p-4 position-sm-fixed">
+    <ul>
+        <li class="nav-item mb-1">
+            <a [routerLink]="['/']" class="nav-link d-flex px-3 py-2" routerLinkActive="active-nav" [routerLinkActiveOptions]="{ exact: true }">
+                <i class="bi bi-list-ul"></i>
+                <span class="label ms-2">Lista</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a [routerLink]="['/', 'kedvencek']" class="nav-link d-flex px-3 py-2" routerLinkActive="active-nav">
+                <i class="bi bi-star-fill"></i>
+                <span class="label ms-2">Kedvencek</span>
+            </a>
+        </li>
+    </ul>
+</nav>

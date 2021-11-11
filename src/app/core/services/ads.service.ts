@@ -19,4 +19,16 @@ export class AdsService {
       this.ads$.next(resp?.ads || []);
     });
   }
+
+  getAdsById(adIds: number[]): IAd[] | [] {
+    if (!adIds.length) {
+      return []
+    }
+
+    const actAds = [...this.ads$.getValue()];
+    const filteredAds = actAds.filter(actAd => adIds.includes(actAd?.adId));
+
+    console.log('filteredAds', filteredAds);
+    return filteredAds;
+  }
 }

@@ -1,10 +1,20 @@
-<p>ads works!</p>
-<section class="container">
+<section class="ads-list container">
     <div class="row">
-        <div class="col-6">left</div>
-        <div class="col-6">
-            <app-ad-box *ngFor="let ad of ads$ | async" [data]="ad"></app-ad-box>
-            <p *ngFor="let favorite of favorites$ | async">{{ favorite }}</p>
+        <div class="hidden-md col-lg-3">
+            <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-12 col-lg-9">
+            <h1 class="d-flex justify-content-between shadow-sm mb-4 px-4 py-3">
+                <span class="label">Hírdetések</span>
+                <span class="note">{{ (ads$ | async)?.length }}</span>
+            </h1>
+            <ng-container *ngIf="(ads$ | async)?.length; else noAds">
+                <app-ad-box *ngFor="let ad of ads$ | async" [data]="ad"></app-ad-box>
+            </ng-container>
+
+            <ng-template #noAds>
+                <p>Nincsenek hírdetések</p>
+            </ng-template>
         </div>
     </div>
 </section>

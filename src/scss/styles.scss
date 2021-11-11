@@ -1,0 +1,11 @@
+//abstract
+@import 'abstract/variables';
+
+//base
+@import 'base/reset';
+@import 'base/global';
+@import 'base/fonts';
+@import 'base/typography';
+
+//vendor
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';

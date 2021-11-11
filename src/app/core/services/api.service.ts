@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, throwError } from 'rxjs';
 
-
+const STORAGE_KEY = 'adslist_favorites';
 @Injectable()
 export class ApiService {
   constructor() {}
@@ -12,16 +12,20 @@ export class ApiService {
   }
 
   getFavorites$(): Observable<any> {
-    /*return of({
-      favorites: localStorage.getItem('adslist_favorites') || []
-    });*/
-    return of({
-      favorites: [2101]
-    });
+    try{
+      const storedFavorites = localStorage.getItem(STORAGE_KEY);
+      return of({ favorites: storedFavorites?.split(',')?.map(Number) })
+    } catch(err) {
+      return throwError(err);
+    }
   }
 
   addFavorites$(favIds: number[]): Observable<any> {
-    //localStorage.setItem('adslist_favorites', favIds);
-    return of();
+    try {
+      localStorage.setItem(STORAGE_KEY, favIds.toString());
+      return of({ success: true });
+    } catch(err) {
+      return throwError(err);
+    }
   }
 }

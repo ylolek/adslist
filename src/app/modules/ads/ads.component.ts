@@ -6,7 +6,6 @@ import { IAd } from 'src/app/core/definitions/ads.definitions';
 import { AdsService } from 'src/app/core/services/ads.service';
 import { FavoritesService } from 'src/app/core/services/favorites.service';
 
-
 @Component({
   selector: 'app-ads',
   templateUrl: './ads.component.html',
@@ -28,7 +27,7 @@ export class AdsComponent implements OnInit, OnDestroy {
     this.favorites$ = this.favoritesService.favorites$.pipe(takeUntil(this.destroy$));
 
     setTimeout(() => {
-      console.log(this.favoritesService.addFavorites([2101]));
+      // this.favoritesService.addFavorites([2101, 2107]);
     }, 2500);
   }
 

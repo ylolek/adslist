@@ -1,5 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import { IAd } from 'src/app/core/definitions/ads.definitions';
+import { FavoritesService } from 'src/app/core/services/favorites.service';
 
 @Component({
   selector: 'app-ad-box',
@@ -7,11 +11,31 @@ import { IAd } from 'src/app/core/definitions/ads.definitions';
   styleUrls: ['./ad-box.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdBoxComponent implements OnInit {
+export class AdBoxComponent implements OnInit, OnDestroy {
+  private readonly destroy$: Subject<boolean> = new Subject<boolean>();
   @Input() data: IAd;
-  constructor() { }
+  isFavorite = false;
+
+  constructor(private readonly favoriteService: FavoritesService) { }
 
   ngOnInit(): void {
+    this.favoriteService.favorites$.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(favorites => {
+      this.isFavorite = favorites.indexOf(this.data?.adId) !== -1;
+    });
   }
 
+  toggleFavorite(): void {
+    if (this.isFavorite) {
+      this.favoriteService.removeFavorites([this.data?.adId]);
+    } else {
+      this.favoriteService.addFavorites([this.data?.adId]);
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.complete();
+  }
 }

@@ -1,0 +1,28 @@
+// fonts
+$font-family: 'Red Hat Display', sans-serif;
+
+// colors
+$def-text-color: #191919;
+$white: #fff;
+$bg-color: #fafbff;
+$purple: #EBECFA;
+$primary: #323EC8;
+$grey-dark: #637181;
+$grey-mid: #B2B2B2;
+$orange: #FFB300;
+
+// others
+$header-height: 50px;
+$footer-height: 100px;
+$border-radius-big: 16px;
+$border-radius-mid: 8px;
+
+// bootstrap breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

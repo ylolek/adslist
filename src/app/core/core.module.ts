@@ -7,6 +7,7 @@ import { Error404Component } from './components/error-pages/error404/error404.co
 import { ApiService } from './services/api.service';
 import { AdsService } from './services/ads.service';
 import { FavoritesService } from './services/favorites.service';
+import { HeaderService } from './services/header.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FavoritesService } from './services/favorites.service';
   providers: [
     ApiService,
     AdsService,
-    FavoritesService
+    FavoritesService,
+    HeaderService
   ]
 })
 export class CoreModule {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { ApiService } from './api.service';
@@ -24,16 +24,47 @@ export class FavoritesService {
     return (favorites?.indexOf(id) !== -1) || false;
   }
 
-  addFavorites(favIds: number[]): boolean {
+  addFavorites(favIds: number[]): void {
+    if (!favIds.length) {
+      return;
+    }
+
     let favorites = [...this.favorites$.getValue()];
-    let favsNum = this.favorites$.getValue().length;
     favIds.forEach(favId => {
       if (!this.isFavorite(favId)) {
         favorites.push(favId);
       }
     });
 
-    this.favorites$.next(favorites);
-    return favorites.length > favsNum;
+    this.apiService.addFavorites$(favorites).pipe(
+      catchError(err => {
+        console.error('Hoppá! Hiba történt a kedvencek mentésekor.', err);
+        return of(err);
+      })
+    ).subscribe(resp => {
+      if (resp?.success) {
+        this.favorites$.next(favorites)
+      }
+    })
+  }
+
+  removeFavorites(favIds: number[]): void {
+    if (!favIds.length) {
+      return;
+    }
+
+    const actFacorites = [...this.favorites$.getValue()];
+    const newFavorites = actFacorites.filter(favId => !favIds.includes(favId));
+
+    this.apiService.addFavorites$(newFavorites).pipe(
+      catchError(err => {
+        console.error('Hoppá! Hiba történt a kedvencek mentésekor.', err);
+        return of(err);
+      })
+    ).subscribe(resp => {
+      if (resp?.success) {
+        this.favorites$.next(newFavorites)
+      }
+    })
   }
 }

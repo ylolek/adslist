@@ -1,0 +1,59 @@
+@import 'shared';
+
+.ad-box {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: $border-radius-big;
+
+    .ad-image,
+    .no-ad-image {
+        width: 212px;
+        height: 180px;
+        border-radius: $border-radius-big 0 0 $border-radius-big;
+    }
+
+    .ad-image {
+        object-fit: cover;
+    }
+
+    .no-ad-image {
+        background-color: $grey-dark;
+    }
+
+    .ad-header {
+        padding: 20px;
+
+        .ad-address {
+            margin-bottom: 16px;
+            width: calc(100% - 50px);
+        }
+
+        .ad-price {
+            font-weight: 500;
+            font-size: 1.5rem; // 24px
+        }
+    }
+
+    .favorite-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius-mid;
+
+        .bi {
+            &:before {
+                font-size: 1.5rem; // 24px
+            }
+
+            &.bi-star {
+                color: $grey-mid;
+            }
+
+            &.bi-star-fill {
+                color: $orange;
+            }
+        }
+    }
+}

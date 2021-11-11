@@ -1,0 +1,29 @@
+body {
+    font-family: $font-family;
+    color: $def-text-color;
+}
+
+a {
+    color: $primary;
+    transition: color .25s ease-in-out;
+
+    &:hover {
+        color: darken($primary, 5%);
+    }
+}
+
+h1,
+h2 {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem; // 24px
+
+    .note {
+        font-size: 1rem;
+    }
+}
+
+h2 {
+    font-size: 1.875rem; // 30px
+}
