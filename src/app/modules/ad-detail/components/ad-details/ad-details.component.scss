@@ -1,0 +1,33 @@
+@import "shared";
+
+.ad-details {
+    position: relative;
+    border-radius: $border-radius-big;
+
+    .ad-details-header {
+        .ad-price {
+            margin-top: 16px;
+            font-weight: 500;
+            font-size: 1.5rem; // 24px
+        }
+
+        .ad-date {
+            display: block;
+            margin-top: 24px;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+    }
+
+    .ad-details-description {
+        margin: 40px 0;
+        border-radius: $border-radius-mid;
+        box-shadow: inset 0px 0px 20px rgba(0, 0, 0, .05);
+    }
+
+    .adbtn-favorite-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

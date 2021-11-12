@@ -1,0 +1,26 @@
+<div class="modal fade" id="adContactModal" tabindex="-1" aria-labelledby="adContactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="adContactModalLabel">Kapcsolatfelvétel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Az alábbi elérhetőségeken tudsz kapcsolatba lépni a hírdetővel:</p>
+            <div *ngIf="!!contactInfos?.email" class="contact-block email">
+                <label><i class="bi bi-envelope-fill"></i>Email:</label>
+                <a [href]="'mailto:' + contactInfos.email" title="Email cím">{{ contactInfos.email }}</a>
+            </div>
+            <ul *ngIf="!!contactInfos?.parsedPhoneNumbers?.length" class="contact-block phone-numbers">
+                <li *ngFor="let phoneNumber of contactInfos.parsedPhoneNumbers" class="phone-number">
+                    <label><i class="bi bi-telephone-fill"></i>Tel.:</label>
+                    <a [href]="'tel:' + phoneNumber" title="Telefonszám">{{ phoneNumber }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+        </div>
+    </div>
+</div>

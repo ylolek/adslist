@@ -1,0 +1,24 @@
+<article class="ad-details d-flex flex-column shadow p-4">
+    <header class="ad-details-header d-flex flex-column">
+        <h2 *ngIf="!!details?.address" class="ad-address">{{ details.address }}</h2>
+        <span *ngIf="!!details?.price && !!details?.currency" class="ad-price">{{ details.price | number }} {{ details.currency }}</span>
+        <span *ngIf="!!details?.uploadDate" class="ad-date">
+            <i class="bi bi-calendar-week"></i>
+            <time>{{ details.uploadDate }}</time>
+        </span>
+    </header>
+    <p *ngIf="!!details?.description" class="ad-details-description p-3" [innerHtml]="details?.description"></p>
+    <a *ngIf="!!details?.contact"
+        data-bs-toggle="modal" data-bs-target="#adContactModal"
+        class="btn btn-primary btn-lg align-self-end px-5 fw-bold"
+        title="Kapcsolatfelvétel">Kapcsolatfelvétel</a>
+
+    <a (click)="onToggleFavoriteBtnClick()" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
+        <i *ngIf="isFavorite; else notFavorite" class="bi bi-star-fill"></i>
+        <ng-template #notFavorite>
+            <i class="bi bi-star"></i>
+        </ng-template>
+    </a>
+</article>
+
+<app-ad-contact-modal *ngIf="!!details?.contact" [contactInfos]="details.contact"></app-ad-contact-modal>
