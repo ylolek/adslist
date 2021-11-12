@@ -4,19 +4,29 @@ import { CommonModule } from '@angular/common';
 import { AdBoxComponent } from './components/ad-box/ad-box.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
+import { AdsSortControlComponent } from './components/ads-sort-control/ads-sort-control.component';
+import { AdsSortSerice } from './services/ads-sort.service';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AdBoxComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    AdsSortControlComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AdBoxComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    AdsSortControlComponent
+  ],
+  providers: [
+    AdsSortSerice
   ]
 })
 export class SharedModule { }

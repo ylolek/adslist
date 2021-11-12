@@ -3,7 +3,7 @@
 .main-nav {
     border-radius: $border-radius-big;
     background-color: $white;
-    transition: all .25s ease-in-out;
+    transition: all #{$def-transition-ease};
 
     @include media-breakpoint-down(lg){
         position: fixed;
@@ -12,6 +12,7 @@
         width: 200px;
         height: 100%;
         border-radius: 0 $border-radius-mid $border-radius-mid 0;
+        z-index: 5;
     }
 
     &.open {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, ChangeDetectionStrategy  } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy  } from '@angular/core';
 
 import { IAd } from 'src/app/core/definitions/ads.definitions';
 
@@ -8,14 +8,11 @@ import { IAd } from 'src/app/core/definitions/ads.definitions';
   styleUrls: ['./ad-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdDetailsComponent implements OnInit {
+export class AdDetailsComponent {
   @Input() details: IAd;
   @Input() isFavorite = false;
-  @Output('toggLeFavorite') toggLeFavorite: EventEmitter<any> = new EventEmitter();
+  @Output() toggLeFavorite: EventEmitter<any> = new EventEmitter();
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onToggleFavoriteBtnClick() {
     this.toggLeFavorite.emit();

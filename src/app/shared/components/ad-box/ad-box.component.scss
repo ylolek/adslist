@@ -5,6 +5,15 @@
     margin-bottom: 20px;
     border-radius: $border-radius-big;
 
+    a {
+        color: $def-text-color;
+        transition: color #{$def-transition-ease};
+
+        &:hover {
+            color: lighten($def-text-color, 25%);
+        }
+    }
+
     .ad-image,
     .no-ad-image {
         width: 212px;
@@ -32,28 +41,18 @@
             font-weight: 500;
             font-size: 1.5rem; // 24px
         }
+
+        .ad-date {
+            display: block;
+            margin-top: 24px;
+            font-weight: 500;
+            font-size: 1rem;
+        }
     }
 
-    .favorite-toggle {
+    .adbtn-favorite-toggle {
         position: absolute;
         top: 20px;
         right: 20px;
-        width: 40px;
-        height: 40px;
-        border-radius: $border-radius-mid;
-
-        .bi {
-            &:before {
-                font-size: 1.5rem; // 24px
-            }
-
-            &.bi-star {
-                color: $grey-mid;
-            }
-
-            &.bi-star-fill {
-                color: $orange;
-            }
-        }
     }
 }

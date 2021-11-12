@@ -1,0 +1,24 @@
+{
+    "adsSort": [
+        {
+            "field": "uploadDate",
+            "value": "asc",
+            "title": "Légrégebbi elől"
+        },
+        {
+            "field": "uploadDate",
+            "value": "desc",
+            "title": "Legújabb elől"
+        },
+        {
+            "field": "address",
+            "value": "asc",
+            "title": "Cím szerint növekvő"
+        },
+        {
+            "field": "address",
+            "value": "desc",
+            "title": "Cím szerint csökkenő"
+        }
+    ]
+}

@@ -5,7 +5,7 @@ body {
 
 a {
     color: $primary;
-    transition: color .25s ease-in-out;
+    transition: color #{$def-transition-ease};
 
     &:hover {
         color: darken($primary, 5%);

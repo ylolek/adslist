@@ -39,7 +39,9 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/scss/styles.scss"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -109,9 +111,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "adslist"
+  "defaultProject": "adslist",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

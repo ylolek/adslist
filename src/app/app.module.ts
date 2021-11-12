@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { appRutes } from './app.routing';
+import { appRoutes } from './app.routing';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { CoreModule } from './core/core.module';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRutes),
+    RouterModule.forRoot(appRoutes),
     CoreModule
   ],
   providers: [],

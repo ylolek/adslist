@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { Error404Component } from './core/components/error-pages/error404/error404.component';
 
-export const appRutes: Routes = [
+export const appRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
@@ -10,7 +10,6 @@ export const appRutes: Routes = [
   },
   {
     path: 'hirdetes/:id',
-    pathMatch: 'full',
     loadChildren: () => import('./modules/ad-detail/ad-detail.module').then(m => m.AdDetailModule),
   },
   {
@@ -20,7 +19,6 @@ export const appRutes: Routes = [
   },
   {
     path: '404',
-    pathMatch: 'full',
     component: Error404Component
   },
   {

@@ -1,8 +1,14 @@
 @import 'shared';
 
 header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     height: $header-height;
+    background-color: $white;
     border-radius: 0 0 $border-radius-mid $border-radius-mid;
+    z-index: 4;
 
     .hamburger-menu {
         &.open {

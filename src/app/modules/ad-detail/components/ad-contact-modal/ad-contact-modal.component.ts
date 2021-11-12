@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { IContact } from 'src/app/core/definitions/ads.definitions';
 
@@ -8,11 +8,7 @@ import { IContact } from 'src/app/core/definitions/ads.definitions';
   styleUrls: ['./ad-contact-modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdContactModalComponent implements OnInit {
+export class AdContactModalComponent {
   @Input() contactInfos: IContact;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

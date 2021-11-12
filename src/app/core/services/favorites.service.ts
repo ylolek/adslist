@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+import { ISort } from '../definitions/sorting.definitions';
 
 import { ApiService } from './api.service';
 
@@ -8,8 +9,8 @@ import { ApiService } from './api.service';
 @Injectable()
 export class FavoritesService {
   readonly favorites$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
-
-  constructor(private readonly apiService: ApiService) {}
+  sort = { key: 'uploadDate', order: 'desc' };
+  constructor(private readonly apiService: ApiService) { }
 
   getFavorites(): void {
     this.apiService.getFavorites$().pipe(
@@ -29,7 +30,7 @@ export class FavoritesService {
       return;
     }
 
-    let favorites = [...this.favorites$.getValue()];
+    const favorites = [...this.favorites$.getValue()];
     favIds.forEach(favId => {
       if (!this.isFavorite(favId)) {
         favorites.push(favId);
@@ -66,5 +67,23 @@ export class FavoritesService {
         this.favorites$.next(newFavorites)
       }
     })
+  }
+
+  getAdsSortingOrder$(): Observable<ISort> {
+    return this.apiService.getAdsSortingOrder$().pipe(
+      catchError(err => throwError(err)),
+      tap((sortOrder: ISort) => {
+        if (!!sortOrder){
+          this.sort = sortOrder
+        }
+      })
+    );
+  }
+
+  saveAdsSortingOrder$(sortOrder?: ISort): Observable<any> {
+    const order = sortOrder || this.sort;
+    return this.apiService.saveAdsSortingOrder$(order).pipe(
+      catchError(err => throwError(err))
+    )
   }
 }

@@ -6,7 +6,7 @@
         <div class="col-12 col-lg-9">
             <h1 class="d-flex justify-content-between shadow-sm mb-4 px-4 py-3">
                 <span class="label">Hírdetések</span>
-                <span class="note">{{ (ads$ | async)?.length }}</span>
+                <span class="note">{{ (ads$ | async)?.length }} db.</span>
             </h1>
             <ng-container *ngIf="(ads$ | async)?.length; else noAds">
                 <app-ad-box *ngFor="let ad of ads$ | async" [data]="ad"></app-ad-box>

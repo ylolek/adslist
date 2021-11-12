@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ad-images',
@@ -6,10 +6,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrls: ['./ad-images.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdImagesComponent implements OnInit {
+export class AdImagesComponent {
   @Input() images: string[];
   constructor() { }
-
-  ngOnInit(): void {
-  }
 }

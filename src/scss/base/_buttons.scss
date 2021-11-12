@@ -1,0 +1,41 @@
+.adbtn {
+    height: 38px;
+
+    &.adbtn-purple {
+        font-weight: 700;
+        font-size: 1rem;
+        color: $primary;
+        background-color: $purple;
+
+        &:hover {
+            background-color: darken($purple, 5%);
+        }
+    }
+
+    .bi {
+        margin-right: 6px;
+    }
+
+    &.adbtn-favorite-toggle {
+        width: 40px;
+        height: 40px;
+        border-radius: $border-radius-mid;
+        z-index: 1;
+
+        .bi {
+            margin-right: 0;
+
+            &:before {
+                font-size: 1.5rem; // 24px
+            }
+
+            &.bi-star {
+                color: $grey-mid;
+            }
+
+            &.bi-star-fill {
+                color: $orange;
+            }
+        }
+    }
+}

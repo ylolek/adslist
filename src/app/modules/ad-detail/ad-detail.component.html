@@ -1,1 +1,19 @@
-<p>ad-detail works!</p>
+<section class="ads-detail container">
+    <div class="row">
+        <div class="hidden-md col-lg-3">
+            <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-12 col-lg-9">
+            <div class="ad-detail-header d-flex align-items-center justify-content-between">
+                <a (click)="goBackBtnClick()" class="btn adbtn adbtn-purple">
+                    <i class="bi bi-arrow-left"></i>
+                    Vissza
+                </a>
+                <h1 class="shadow-sm px-4 py-3">Részletek</h1>
+            </div>
+
+            <app-ad-images [images]="[adData?.image || '']"></app-ad-images>
+            <app-ad-details [details]="adData" [isFavorite]="isFavorite" (toggLeFavorite)="toggLeFavorite()"></app-ad-details>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,5 @@
-interface IContact {
+
+export interface IContact {
   readonly email: string;
   readonly parsedPhoneNumbers: string[];
 }
@@ -13,4 +14,8 @@ export interface IAd {
   readonly description: string;
   readonly status: string;
   readonly contact: IContact;
+}
+
+export interface IAdsData {
+  readonly ads: IAd[];
 }

@@ -1,1 +1,15 @@
-<p>error404 works!</p>
+<section class="error error-404 container">
+    <div class="row">
+        <div class="hidden-md col-lg-3">
+            <app-side-menu></app-side-menu>
+        </div>
+        <div class="col-12 col-lg-9">
+            <h1 class="d-block">Hoppá!</h1>
+            <p>A hírdetés nem található.</p>
+            <a [routerLink]="['/']" title="Vissza a hírdetésekhez" class="btn btn-info">
+                <i class="bi bi-arrow-left"></i>
+                Vissza a hírdetésekhez
+            </a>
+        </div>
+    </div>
+</section>

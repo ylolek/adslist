@@ -8,6 +8,9 @@ import { ApiService } from './services/api.service';
 import { AdsService } from './services/ads.service';
 import { FavoritesService } from './services/favorites.service';
 import { HeaderService } from './services/header.service';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HeaderService } from './services/header.service';
     Error404Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    SharedModule
   ],
   exports: [
     HeaderComponent,

@@ -15,20 +15,11 @@ import { FavoritesService } from 'src/app/core/services/favorites.service';
 export class AdsComponent implements OnInit, OnDestroy {
   private readonly destroy$: Subject<boolean> = new Subject<boolean>();
   ads$: Observable<IAd[]>;
-  favorites$: Observable<number[]>;
 
-  constructor(
-    private readonly adsService: AdsService,
-    private readonly favoritesService: FavoritesService
-  ) { }
+  constructor(private readonly adsService: AdsService) { }
 
   ngOnInit(): void {
     this.ads$ = this.adsService.ads$.pipe(takeUntil(this.destroy$));
-    this.favorites$ = this.favoritesService.favorites$.pipe(takeUntil(this.destroy$));
-
-    setTimeout(() => {
-      // this.favoritesService.addFavorites([2101, 2107]);
-    }, 2500);
   }
 
   ngOnDestroy(): void {
