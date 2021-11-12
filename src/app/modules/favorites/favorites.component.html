@@ -10,7 +10,7 @@
             </h1>
 
             <app-ads-sort-control
-                *ngIf="!!favorites?.length"
+                *ngIf="!!favorites?.length && favorites.length > 1"
                 [sortOrder]="sortOrder"></app-ads-sort-control>
 
             <ng-container *ngIf="!!favorites?.length; else noFavorites">

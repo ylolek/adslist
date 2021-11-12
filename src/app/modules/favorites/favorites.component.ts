@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { catchError, take, takeUntil } from 'rxjs/operators';
 
@@ -19,15 +20,14 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   favorites: IAd[];
   sortOrder: ISort;
   constructor(
+    private readonly route: ActivatedRoute,
     private readonly adsService: AdsService,
     private readonly favoritesService: FavoritesService,
     private readonly adsSortService: AdsSortSerice
   ) { }
 
   ngOnInit(): void {
-    this.favoritesService.getAdsSortingOrder$().pipe(
-      takeUntil(this.destroy$)
-    ).subscribe(order => this.sortOrder = order || this.favoritesService.sort);
+    this.sortOrder = this.route.snapshot.data?.sortOrder || this.favoritesService.sort
 
     this.favoritesService.favorites$.pipe(
       takeUntil(this.destroy$),

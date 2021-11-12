@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FavoritesComponent } from './favorites.component';
 import { favoritesRoutes } from './favorites.routing';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { FavoritesResolver } from './resolvers/favorites.resolver';
 
 
 @NgModule({
@@ -16,6 +16,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     RouterModule.forChild(favoritesRoutes),
     SharedModule
+  ],
+  providers: [
+    FavoritesResolver
   ]
 })
 export class FavoritesModule { }

@@ -1,4 +1,3 @@
-
 export interface IContact {
   readonly email: string;
   readonly parsedPhoneNumbers: string[];

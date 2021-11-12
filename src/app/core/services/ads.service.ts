@@ -13,12 +13,12 @@ export class AdsService {
 
   constructor(private readonly apiService: ApiService) {}
 
-  getAds(): void {
-    this.apiService.getAds$().pipe(
-      catchError(err => throwError(err))
-    ).subscribe((resp: IAdsData) => {
-      this.ads$.next(this.sortAds('uploadDate', 'desc', resp?.ads || []));
-    });
+  addAds(ads: IAd[]): void {
+    if (!ads.length) {
+      return;
+    }
+
+    this.ads$.next(this.sortAds('uploadDate', 'desc', ads));
   }
 
   getAdsById(adIds: number[]): IAd[] | [] {

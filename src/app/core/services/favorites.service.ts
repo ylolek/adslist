@@ -12,12 +12,12 @@ export class FavoritesService {
   sort = { key: 'uploadDate', order: 'desc' };
   constructor(private readonly apiService: ApiService) { }
 
-  getFavorites(): void {
-    this.apiService.getFavorites$().pipe(
-      catchError(err => throwError(err))
-    ).subscribe(resp => {
-      this.favorites$.next(resp?.favorites || []);
-    });
+  adFavorites(favorites: number[]): void {
+    if (!favorites.length) {
+      return;
+    }
+
+    this.favorites$.next(favorites);
   }
 
   isFavorite(id: number): boolean {

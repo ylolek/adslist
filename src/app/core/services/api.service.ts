@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ISort } from '../definitions/sorting.definitions';
+import { map } from 'rxjs/operators';
 
 const STORAGE_KEY_FAVS = 'adslist_favorites';
 const STORAGE_KEY_FAVS_ORDER = 'adslist_favorites_order';
@@ -11,13 +12,15 @@ export class ApiService {
   constructor(private readonly http: HttpClient) {}
 
   getAds$(): Observable<any> {
-    return this.http.get('../../../assets/mock-jsons/ads.json');
+    return this.http.get('../../../assets/mock-jsons/ads.json').pipe(
+      map((resp: any) => resp?.ads)
+    );
   }
 
   getFavorites$(): Observable<any> {
     try{
       const storedFavorites = localStorage.getItem(STORAGE_KEY_FAVS);
-      return of({ favorites: storedFavorites?.split(',')?.map(Number) })
+      return (!!storedFavorites ? of(storedFavorites?.split(',')?.map(Number)) : of([]));
     } catch(err) {
       return throwError(err);
     }

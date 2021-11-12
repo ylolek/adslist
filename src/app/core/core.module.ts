@@ -11,12 +11,14 @@ import { HeaderService } from './services/header.service';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BaseComponent } from './components/base/base.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    Error404Component
+    Error404Component,
+    BaseComponent
   ],
   imports: [
     CommonModule,

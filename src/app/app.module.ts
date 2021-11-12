@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routing';
 import { CoreModule } from './core/core.module';
+import { BaseResolver } from './core/resolvers/base.resolver';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { CoreModule } from './core/core.module';
     RouterModule.forRoot(appRoutes),
     CoreModule
   ],
-  providers: [],
+  providers: [BaseResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
