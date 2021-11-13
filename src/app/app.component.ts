@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.router.events.pipe(
       takeUntil(this.destroy$),
       filter(events => events instanceof NavigationStart)
-    ).subscribe(_ => { this.headerService.closeMenu() });
+    ).subscribe(event => this.headerService.closeMenu());
   }
 
   ngOnDestroy(): void {

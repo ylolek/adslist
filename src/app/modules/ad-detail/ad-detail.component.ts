@@ -54,7 +54,12 @@ export class AdDetailComponent implements OnInit, OnDestroy {
   }
 
   goBackBtnClick(): void {
-    history.back();
+    if (history.length > 2) {
+      history.back();
+      return;
+    }
+
+    void this.router.navigate(['/']);
   }
 
   ngOnDestroy(): void {
