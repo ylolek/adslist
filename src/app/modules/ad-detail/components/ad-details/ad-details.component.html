@@ -1,4 +1,4 @@
-<article class="ad-details d-flex flex-column shadow p-4">
+<article class="ad-details d-flex flex-column adslist-shadow adslist-shadow-lg p-4">
     <header class="ad-details-header d-flex flex-column">
         <h2 *ngIf="!!details?.address" class="ad-address">{{ details.address }}</h2>
         <span *ngIf="!!details?.price && !!details?.currency" class="ad-price">{{ details.price | number }} {{ details.currency }}</span>
@@ -13,7 +13,7 @@
         class="btn adbtn adbtn-lg adbtn-primary px-5"
         title="Kapcsolatfelvétel">Kapcsolatfelvétel</a>
 
-    <a (click)="onToggleFavoriteBtnClick()" [attr.title]="(isFavorite ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez')" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
+    <a (click)="onToggleFavoriteBtnClick()" [attr.title]="(isFavorite ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez')" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center adslist-shadow">
         <i *ngIf="isFavorite; else notFavorite" class="bi bi-star-fill"></i>
         <ng-template #notFavorite>
             <i class="bi bi-star"></i>
