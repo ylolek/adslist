@@ -1,0 +1,35 @@
+.ads-detail {
+    position: relative;
+    padding-bottom: 60px;
+
+    @include media-breakpoint-down(sm) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &::ng-deep {
+        .row {
+            @include media-breakpoint-down(sm) {
+                margin: 0;
+            }
+
+            [class^="col"] {
+                @include media-breakpoint-down(sm) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .ad-detail-header {
+        margin-bottom: 80px;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 40px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -10,7 +10,7 @@
     <p *ngIf="!!details?.description" class="ad-details-description p-3" [innerHtml]="details?.description"></p>
     <a *ngIf="!!details?.contact"
         data-bs-toggle="modal" data-bs-target="#adContactModal"
-        class="btn btn-primary btn-lg align-self-end px-5 fw-bold"
+        class="btn adbtn adbtn-lg adbtn-primary px-5"
         title="Kapcsolatfelvétel">Kapcsolatfelvétel</a>
 
     <a (click)="onToggleFavoriteBtnClick()" [attr.title]="(isFavorite ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez')" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">

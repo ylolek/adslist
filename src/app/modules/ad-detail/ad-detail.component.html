@@ -5,11 +5,18 @@
         </div>
         <div class="col-12 col-lg-9">
             <div class="ad-detail-header d-flex align-items-center justify-content-between">
-                <a (click)="goBackBtnClick()" class="btn adbtn adbtn-purple">
+                <a (click)="goBackBtnClick()" class="btn adbtn adbtn-purple d-none d-sm-flex">
                     <i class="bi bi-arrow-left"></i>
-                    Vissza
+                    <span class="label">Vissza</span>
                 </a>
-                <h1 class="shadow-sm px-4 py-3">Részletek</h1>
+
+                <a (click)="goBackBtnClick()" class="btn adbtn adbtn-darkgrey d-flex align-items-center justify-content-center d-sm-none">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+
+                <h1 class="shadow-sm d-none d-sm-block px-4 py-3">
+                    <span class="label">Részletek</span>
+                </h1>
             </div>
 
             <app-ad-images [images]="[adData?.image || '']"></app-ad-images>

@@ -1,16 +1,28 @@
 @import "shared";
 
 .ad-images {
+    position: relative;
     margin-bottom: 40px;
     height: 300px;
     overflow: hidden;
     border-radius: $border-radius-big;
+    z-index: 2;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    }
 
     &.container {
         padding: 0;
 
         .row {
             .col {
+                @include media-breakpoint-down(sm) {
+                    padding: 0;
+                }
+
                 &:nth-child(3) {
                     .row {
                         &:first-child {

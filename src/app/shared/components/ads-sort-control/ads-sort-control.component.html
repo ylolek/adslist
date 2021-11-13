@@ -1,7 +1,7 @@
 <section *ngIf="!!sortForm" class="ads-sort container px-0 mb-3 border-bottom">
     <form [formGroup]="sortForm" class="d-flex align-items-center justify-content-end">
         <i class="bi bi-filter"></i>
-        <select formControlName="sort" class="form-select ms-2 mb-2 w-25 border-0">
+        <select formControlName="sort" class="form-select ms-2 mb-2 border-0">
             <option
                 *ngFor="let sortOption of sortOptions$ | async"
                 [value]="sortOption?.field + '_' + sortOption?.value">{{ sortOption?.title }}</option>

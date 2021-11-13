@@ -1,5 +1,18 @@
 .adbtn {
+    display: flex;
+    align-items: center;
     height: 38px;
+
+    &.adbtn-lg {
+        height: 60px;
+        font-weight: 700;
+        font-size: 1.25rem; // 20px
+        color: $white;
+    }
+
+    &.adbtn-primary {
+        background-color: $primary;
+    }
 
     &.adbtn-purple {
         font-weight: 700;
@@ -9,6 +22,15 @@
 
         &:hover {
             background-color: darken($purple, 5%);
+        }
+    }
+
+    &.adbtn-darkgrey {
+        color: $white;
+        background-color: $grey-darker;
+
+        &:hover {
+            background-color: darken($grey-darker, 5%);
         }
     }
 
