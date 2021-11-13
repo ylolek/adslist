@@ -8,6 +8,9 @@
     border-radius: $border-radius-big;
     z-index: 2;
 
+    @include media-breakpoint-down(md) {
+    }
+
     @include media-breakpoint-down(sm) {
         margin-bottom: 0;
         border-radius: 0;
