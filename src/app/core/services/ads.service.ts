@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { BehaviorSubject } from 'rxjs';
 
-import { IAd, IAdsData } from '../definitions/ads.definitions';
+import { IAd } from '../definitions/ads.definitions';
 import { TSortKeys, TSortOrder } from '../definitions/sorting.definitions';
 import { ApiService } from './api.service';
 

@@ -1,3 +1,5 @@
+@import "breakpoints";
+
 // fonts
 $font-family: 'Red Hat Display', sans-serif;
 
@@ -18,14 +20,6 @@ $border-radius-big: 16px;
 $border-radius-mid: 8px;
 
 // transitions
-$def-transition-ease: .25s ease-in-out;
-
-// bootstrap breakpoints
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+$def-transition-sec: .25s;
+$def-transition-ease: ease-in-out;
+$def-transition: #{$def-transition-sec} #{$def-transition-ease};

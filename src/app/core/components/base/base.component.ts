@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { AdsService } from '../../services/ads.service';
 import { FavoritesService } from '../../services/favorites.service';
 

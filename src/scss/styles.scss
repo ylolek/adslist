@@ -1,12 +1,14 @@
 //abstract
 @import 'abstract/variables';
+@import 'abstract/mixins';
 
 //base
 @import 'base/reset';
 @import 'base/global';
 @import 'base/fonts';
-@import 'base/typography';
-@import 'base/buttons';
+@import 'base/typo/typography';
+@import 'base//ui/buttons';
+@import 'base//ui/form/select';
 
 //vendor
 @import 'node_modules/bootstrap-icons/font/bootstrap-icons.scss';

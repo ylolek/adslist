@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { forkJoin, Observable } from 'rxjs';
+
 import { IBaseData } from '../definitions/base.definitions';
-
-
 import { ApiService } from '../services/api.service';
 
 @Injectable({

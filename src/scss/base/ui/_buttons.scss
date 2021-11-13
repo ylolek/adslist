@@ -19,11 +19,19 @@
     &.adbtn-favorite-toggle {
         width: 40px;
         height: 40px;
+        background-color: $white;
         border-radius: $border-radius-mid;
         z-index: 1;
 
+        &:hover {
+            .bi {
+                transform: rotate3d(0, 1, 0, 360deg);
+            }
+        }
+
         .bi {
             margin-right: 0;
+            transition: all #{$def-transition};
 
             &:before {
                 font-size: 1.5rem; // 24px

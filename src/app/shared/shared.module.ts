@@ -6,7 +6,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
 import { AdsSortControlComponent } from './components/ads-sort-control/ads-sort-control.component';
 import { AdsSortSerice } from './services/ads-sort.service';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

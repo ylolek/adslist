@@ -13,7 +13,7 @@
         class="btn btn-primary btn-lg align-self-end px-5 fw-bold"
         title="Kapcsolatfelvétel">Kapcsolatfelvétel</a>
 
-    <a (click)="onToggleFavoriteBtnClick()" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
+    <a (click)="onToggleFavoriteBtnClick()" [attr.title]="(isFavorite ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez')" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
         <i *ngIf="isFavorite; else notFavorite" class="bi bi-star-fill"></i>
         <ng-template #notFavorite>
             <i class="bi bi-star"></i>

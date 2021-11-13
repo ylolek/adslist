@@ -1,0 +1,25 @@
+h1{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    border-radius: $border-radius-big;
+
+    .label {
+        font-size: 1.5rem; // 24px
+        max-width: 60%;
+        @include line-clamp(1);
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.125rem; // 18px
+        }
+    }
+
+    .note {
+        font-size: 1rem;
+
+        @include media-breakpoint-down(sm) {
+            font-weight: 900;
+            font-size: .875rem; // 14px
+        }
+    }
+}

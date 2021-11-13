@@ -3,15 +3,15 @@
 .main-nav {
     border-radius: $border-radius-big;
     background-color: $white;
-    transition: all #{$def-transition-ease};
+    transition: all #{$def-transition};
 
     @include media-breakpoint-down(lg){
         position: fixed;
         left: -200px;
-        top: $header-height;
+        top: calc(#{$header-height} + 2px);
         width: 200px;
         height: 100%;
-        border-radius: 0 $border-radius-mid $border-radius-mid 0;
+        border-radius: 0;
         z-index: 5;
     }
 

@@ -4,7 +4,6 @@ import { takeUntil } from 'rxjs/operators';
 
 import { IAd } from 'src/app/core/definitions/ads.definitions';
 import { AdsService } from 'src/app/core/services/ads.service';
-import { FavoritesService } from 'src/app/core/services/favorites.service';
 
 @Component({
   selector: 'app-ads',

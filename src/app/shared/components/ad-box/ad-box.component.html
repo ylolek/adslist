@@ -1,5 +1,5 @@
-<article class="ad-box d-flex shadow">
-    <a [routerLink]="['/', 'hirdetes', data?.adId]" title="Tovább a hírdetésre">
+<article class="ad d-flex flex-column flex-md-row shadow">
+    <a [routerLink]="['/', 'hirdetes', data?.adId]" class="ad-image-container" title="Tovább a hírdetésre">
         <ng-container *ngIf="!!data?.image; else noImage">
             <img [src]="data?.image" class="ad-image" alt="">
         </ng-container>
@@ -7,6 +7,7 @@
             <div class="no-ad-image"></div>
         </ng-template>
     </a>
+
 
     <header class="ad-header flex-grow-1 d-flex flex-column">
         <h2 *ngIf="!!data?.address" class="ad-address">
@@ -20,7 +21,7 @@
             <time>{{ data.uploadDate }}</time>
         </span>
     </header>
-    <a (click)="onToggleFavoriteBtnClick()" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
+    <a (click)="onToggleFavoriteBtnClick()" [attr.title]="(isFavorite ? 'Eltávolítás a kedvencekből' : 'Hozzáadás a kedvencekhez')" class="adbtn adbtn-favorite-toggle d-flex align-items-center justify-content-center shadow-sm">
         <i *ngIf="isFavorite; else notFavorite" class="bi bi-star-fill"></i>
         <ng-template #notFavorite>
             <i class="bi bi-star"></i>

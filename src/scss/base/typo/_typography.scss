@@ -1,0 +1,17 @@
+body {
+    font-family: $font-family;
+    color: $def-text-color;
+}
+
+a {
+    color: $primary;
+    transition: color #{$def-transition};
+
+    &:hover {
+        color: darken($primary, 5%);
+    }
+
+    &.nav-link {
+        color: $primary;
+    }
+}
