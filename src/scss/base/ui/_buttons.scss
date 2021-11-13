@@ -12,6 +12,10 @@
 
     &.adbtn-primary {
         background-color: $primary;
+
+        &:hover {
+            background-color: darken($primary, 5%);
+        }
     }
 
     &.adbtn-purple {

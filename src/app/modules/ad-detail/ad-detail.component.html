@@ -19,7 +19,7 @@
                 </h1>
             </div>
 
-            <app-ad-images [images]="[adData?.image || '']"></app-ad-images>
+            <app-ad-images *ngIf="!!adData?.image" [images]="[adData.image]"></app-ad-images>
             <app-ad-details [details]="adData" [isFavorite]="isFavorite" (toggLeFavorite)="toggLeFavorite()"></app-ad-details>
         </div>
     </div>

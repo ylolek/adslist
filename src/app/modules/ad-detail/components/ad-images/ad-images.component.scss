@@ -57,10 +57,15 @@
         align-items: flex-start;
     }
 
-    img {
+    img,
+    .no-ad-image {
         width: 100%;
         height: 100%;
         max-height: 300px;
         object-fit: cover;
+    }
+
+    .no-ad-image {
+        background-color: $grey-dark;
     }
 }
