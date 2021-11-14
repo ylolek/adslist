@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { ISort } from '../definitions/sorting.definitions';
 
@@ -11,14 +11,6 @@ export class FavoritesService {
   readonly favorites$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
   sort = { key: 'uploadDate', order: 'desc' };
   constructor(private readonly apiService: ApiService) { }
-
-  adFavorites(favorites: number[]): void {
-    if (!favorites.length) {
-      return;
-    }
-
-    this.favorites$.next(favorites);
-  }
 
   isFavorite(id: number): boolean {
     const favorites = this.favorites$.getValue();

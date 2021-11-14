@@ -22,6 +22,6 @@ export class BaseComponent implements OnInit {
     const ads = this.route.snapshot.data?.data?.ads;
     const favorites = this.route.snapshot.data?.data?.favorites;
     this.adsService.addAds(ads)
-    this.favoritesService.adFavorites(favorites);
+    this.favoritesService.addFavorites(favorites);
   }
 }

@@ -3,14 +3,13 @@ import { BehaviorSubject } from 'rxjs';
 
 import { IAd } from '../definitions/ads.definitions';
 import { TSortKeys, TSortOrder } from '../definitions/sorting.definitions';
-import { ApiService } from './api.service';
 
 
 @Injectable()
 export class AdsService {
   readonly ads$: BehaviorSubject<IAd[]> = new BehaviorSubject<IAd[]>([]);
 
-  constructor(private readonly apiService: ApiService) {}
+  constructor() {}
 
   addAds(ads: IAd[]): void {
     if (!ads.length) {
