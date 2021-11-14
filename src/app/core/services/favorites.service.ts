@@ -71,7 +71,10 @@ export class FavoritesService {
 
   getAdsSortingOrder$(): Observable<ISort> {
     return this.apiService.getAdsSortingOrder$().pipe(
-      catchError(err => throwError(err)),
+      catchError(err => {
+        console.warn('Hoppá! Hiba történt a kedvencek rendezési sorrendjének mentésekor.', err);
+        return of(this.sort)
+      }),
       tap((sortOrder: ISort) => {
         if (!!sortOrder){
           this.sort = sortOrder
@@ -83,7 +86,10 @@ export class FavoritesService {
   saveAdsSortingOrder$(sortOrder?: ISort): Observable<any> {
     const order = sortOrder || this.sort;
     return this.apiService.saveAdsSortingOrder$(order).pipe(
-      catchError(err => throwError(err))
+      catchError(err => {
+        console.warn('Hoppá! Hiba történt a kedvencek rendezési sorrendjének betöltésekor.', err);
+        return of(this.sort)
+      })
     )
   }
 }
